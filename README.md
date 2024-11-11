@@ -51,6 +51,7 @@ Recurring Customer Orders: Examined popular items ordered by recurring customers
 ### Objective 3: Customer Segmentation
 Segmentation Based on Frequency and Spend: Customers are segmented based on their frequency of purchases and total expenditure, categorizing them as Occasional, Frequent, or VIP customers.
 ## Steps of the Project
+![Process Flowchart](image.png) <!
 ### Data Cleaning:
 
 Removed duplicates, handled missing values, and standardized data entries.
