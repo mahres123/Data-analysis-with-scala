@@ -76,24 +76,7 @@ object Main {
       println(s"Product ID: $productId, Purchases: $purchaseCount")
     }
 
-    // (Optional) Display popular products among recurring customers
-    if (recurringCustomers.nonEmpty) {
-      val recurringCustomerIds = recurringCustomers.keys.toSet
-      val itemsByRecurringCustomers = orders
-        .filter(order => recurringCustomerIds.contains(order.customerId))
-        .flatMap(order => items.filter(_.orderId == order.orderId))
-
-      val popularItemsByRecurringCustomers = itemsByRecurringCustomers
-        .groupBy(_.productId)
-        .view.mapValues(_.size)
-        .toList.sortBy(-_._2)
-        .take(10)
-
-      println("\nTop Products Ordered by Recurring Customers:")
-      popularItemsByRecurringCustomers.foreach { case (productId, count) =>
-        println(s"Product ID: $productId, Purchases: $count")
-      }
-    }
+    
 
     // Step 4: Perform Customer Segmentation
     println("\nPerforming Customer Segmentation...")
